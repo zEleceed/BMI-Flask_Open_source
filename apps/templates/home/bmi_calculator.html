@@ -1,0 +1,44 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Dashboard {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+</head>
+<body>
+<form action="/bmi_calculator" method="POST">
+        Input Your Height (m)
+        <input type="text" name="number1"> <br>
+
+        Input Your Weight (kg)
+        <input type="text" name="number2">
+
+        <!-- submit button -->
+        <input type="submit" value="Submit">
+</form>
+{% if result %}
+    <p>{{ result }}</p>
+{% endif %}
+
+<a href="/logout">
+              <i class="fa fa-user sm:mr-1" aria-hidden="true"></i>
+              <span class="hidden sm:inline">LOGOUT</span>
+            </a>
+</body>
+</html>
+
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+
+{% endblock javascripts %}
